@@ -1,0 +1,69 @@
+<div class="about-container" [ngClass]="{'hidden': about == false, 'about-end': time}">
+  <div class="about-content" [ngClass]="{'fade-up': time}">
+    <div class="first-about-line">
+      <img src="../../assets/close.png" alt="" (click)="aboutClose()">
+    </div>
+    <div class="rest-about">
+      <div class="text-vertical">ESMEL</div>
+      <div class="text-about">
+        <span class="text-red">Duis laoreet purus risus, vitae ultricies turpis vestibulum eu. </span> Vestibulum feugiat velit augue, condimentum volutpat enim cursus sit amet. Nam convallis orci in neque porttitor gravida. Integer dapibus metus arcu, sit amet hendrerit est suscipit et. Mauris maximus neque sit amet egestas suscipit. Donec pretium dignissim nunc, nec vehicula dui porta non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt egestas leo, eu scelerisque libero malesuada a. Nullam vitae porttitor tellus. Donec mollis, sem ac feugiat congue, mi mi aliquam magna, sed tristique ex odio et massa. <br> <br>
+        <span class="text-red">Ut eget tellus non diam varius bibendum. Pellentesque sit amet sem vel risus imperdiet ultricies non quis nibh. Maecenas congue euismod libero, sit amet tincidunt elit consectetur a. </span> Aliquam erat volutpat. Nam ullamcorper dapibus ante, et sollicitudin arcu mattis nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nunc sem, aliquam a ante sit amet, blandit scelerisque enim. Quisque dignissim, est vitae luctus efficitur. <span class="text-red">Dolor ligula vehicula arcu, non porta dolor nisl quis lectus. Curabitur tristique sollicitudin purus, nec viverra odio tristique non. Proin at leo fermentum. </span> Interdum diam sit amet, ultricies velit.<br> <br>
+        Duis laoreet purus risus, vitae ultricies turpis vestibulum eu. Vestibulum feugiat velit augue, condimentum volutpat enim cursus sit amet. Nam convallis orci in neque porttitor gravida. Integer dapibus metus arcu, sit amet hendrerit est suscipit et. Mauris maximus neque sit amet egestas suscipit. Donec pretium dignissim nunc, nec vehicula dui porta non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt egestas leo, eu scelerisque libero malesuada a. Nullam vitae porttitor tellus. Donec mollis, sem ac feugiat congue, mi mi aliquam magna, sed tristique ex odio et massa.
+      </div>
+      <div class="text-vertical">LIAN</div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="above-all">
+    <div class="first-line-container">
+      <div class="text" (click)="aboutOpen()">About</div>
+    </div>
+    <div class="rest-container">
+      <div class="text-vertical">ESMEL</div>
+      <div class="text-vertical">LIAN</div>
+    </div>
+  </div>
+
+  <div class="carousel-container" routerLinkActive="active">
+    <ngb-carousel #myCarousel class="carousel" (swipeleft)="next()" (swiperight)="prev()" (scroll)="next()"
+                  [showNavigationArrows]="true"
+                  [showNavigationIndicators]="true"
+                  interval="200000"
+                  [keyboard]="true"
+                  [wrap]="true">
+      <ng-template ngbSlide>
+        <div class="section" id="project1">
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="../../assets/project1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="text-video"><a routerLink="/project1">View Project</a></div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="section" id="project2">
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="../../assets/project2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="text-video"><a routerLink="/project2">View Project</a></div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="section" id="project3">
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="../../assets/project3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="text-video"><a routerLink="/project3">View Project</a></div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+
+
+
+
+
+
+

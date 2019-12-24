@@ -1,0 +1,110 @@
+<div class="about-container" [ngClass]="{'hidden': about == false, 'about-end': time}" id="top">
+  <div class="about-content" [ngClass]="{'fade-up': time}">
+    <div class="first-about-line">
+      <img src="../../assets/close.png" alt="" (click)="aboutClose()">
+    </div>
+    <div class="rest-about">
+      <div class="text-vertical">ESMEL</div>
+      <div class="text-about">
+        <span class="text-red">Duis laoreet purus risus, vitae ultricies turpis vestibulum eu. </span> Vestibulum feugiat velit augue, condimentum volutpat enim cursus sit amet. Nam convallis orci in neque porttitor gravida. Integer dapibus metus arcu, sit amet hendrerit est suscipit et. Mauris maximus neque sit amet egestas suscipit. Donec pretium dignissim nunc, nec vehicula dui porta non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt egestas leo, eu scelerisque libero malesuada a. Nullam vitae porttitor tellus. Donec mollis, sem ac feugiat congue, mi mi aliquam magna, sed tristique ex odio et massa. <br> <br>
+        <span class="text-red">Ut eget tellus non diam varius bibendum. Pellentesque sit amet sem vel risus imperdiet ultricies non quis nibh. Maecenas congue euismod libero, sit amet tincidunt elit consectetur a. </span> Aliquam erat volutpat. Nam ullamcorper dapibus ante, et sollicitudin arcu mattis nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nunc sem, aliquam a ante sit amet, blandit scelerisque enim. Quisque dignissim, est vitae luctus efficitur. <span class="text-red">Dolor ligula vehicula arcu, non porta dolor nisl quis lectus. Curabitur tristique sollicitudin purus, nec viverra odio tristique non. Proin at leo fermentum. </span> Interdum diam sit amet, ultricies velit.<br> <br>
+        Duis laoreet purus risus, vitae ultricies turpis vestibulum eu. Vestibulum feugiat velit augue, condimentum volutpat enim cursus sit amet. Nam convallis orci in neque porttitor gravida. Integer dapibus metus arcu, sit amet hendrerit est suscipit et. Mauris maximus neque sit amet egestas suscipit. Donec pretium dignissim nunc, nec vehicula dui porta non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt egestas leo, eu scelerisque libero malesuada a. Nullam vitae porttitor tellus. Donec mollis, sem ac feugiat congue, mi mi aliquam magna, sed tristique ex odio et massa.
+      </div>
+      <div class="text-vertical">LIAN</div>
+    </div>
+  </div>
+</div>
+
+<div [ngClass]="{'hidden': gone}" routerLinkActive="active">
+  <div class="above-all" [ngClass]="{'above-all-end': clicked1 == false}">
+    <div class="first-line-container">
+      <div class="text" (click)="back()">Back</div>
+      <div class="text" (click)="aboutOpen()">About</div>
+    </div>
+    <div class="rest-container">
+      <div class="text-vertical">ESMEL</div>
+      <div class="text-vertical">LIAN</div>
+    </div>
+  </div>
+
+  <div class="carousel-container">
+    <div class="section" id="project1" [ngClass]="{'animation': clicked1}">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="../../assets/project1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="text-start">Donec non mattis quam<br>Eget tempus lacus</div>
+    <div class="content-line">
+      <div class="content-image">
+        <div class="image1">
+          <div class="image-container">
+            <!--          <img src="../../assets/project11.jpg" class="image-para" data-bottom-top="transform:translate3d(0, 100px, 0)" data-top-bottom="transform:translate3d(0, -100px, 0)">-->
+            <img src="../../assets/project11.jpg" class="image-para1">
+          </div>
+        </div>
+        <div class="image2">
+          <div class="image-container">
+            <!--          <img src="../../assets/project12.jpg" class="image-para" data-bottom-top="transform:translate3d(0, 100px, 0)" data-top-bottom="transform:translate3d(0, -100px, 0)">-->
+            <img src="../../assets/project12.jpg" class="image-para2">
+          </div>
+        </div>
+      </div>
+      <div class="content-text">
+        Curabitur metus nisi, suscipit et luctus eget, efficitur sed ipsum. Vestibulum nec molestie metus. Duis sed lacus sed ipsum convallis interdum. Cras lectus ante, vehicula et tempus at, lacinia eget mauris. Nullam rhoncus lectus eget condimentum consectetur. Ut molestie metus purus, ut pulvinar mi interdum eget
+      </div>
+    </div>
+    <div class="content-right">
+      <div class="container-right">
+        <div class="text-start-right">Donec non mattis quam, eget tempus lacus</div>
+        <div class="text-right">Duis leo tellus, facilisis ut sollicitudin ut, posuere eget enim. Fusce vel finibus tortor. Sed sapien orci, eleifend sed mauris et, convallis facilisis magna.Duis leo tellus, facilisis ut sollicitudin ut, posuere eget enim. Fusce vel finibus tortor. Sed sapien orci, eleifend sed mauris et, convallis facilisis magna.</div>
+      </div>
+    </div>
+    <div class="content-line2">
+      <div class="content-image" [ngClass]="{'hidden': index != 3}">
+        <div class="image">
+          <div class="image-container2 image11 back3"></div>
+        </div>
+        <div class="image2">
+          <div class="image-container2 image22 back4"></div>
+        </div>
+      </div>
+      <div class="content-image" [ngClass]="{'hidden': index != 5}">
+        <div class="image">
+          <div class="image-container2 image11 back5"></div>
+        </div>
+        <div class="image2">
+          <div class="image-container2 image22 back6"></div>
+        </div>
+      </div>
+      <div class="content-image" [ngClass]="{'hidden': index != 7}">
+        <div class="image">
+          <div class="image-container2 image11 back7"></div>
+        </div>
+        <div class="image2">
+          <div class="image-container2 image22 back8"></div>
+        </div>
+      </div>
+      <div class="content-image" [ngClass]="{'hidden': index != 9}">
+        <div class="image">
+          <div class="image-container2 image11 back9"></div>
+        </div>
+        <div class="image2">
+          <div class="image-container2 image22 back10"></div>
+        </div>
+      </div>
+      <div class="arrow-right-container" (click)="right()" [ngClass]="{'notVisible': index == 9}"><img src="../../assets/arrow-right.png" alt="" class="arrow-right"></div>
+      <div class="arrow-left-container" (click)="left()" [ngClass]="{'notVisible': index == 3}"><img src="../../assets/arrow-left.png" alt="" class="arrow-left"></div>
+    </div>
+  </div>
+
+  <a routerLink="/project2">
+    <div class="other-project">
+      <div class="text1">Next project</div>
+      <div class="text2">X name Random</div>
+    </div>
+  </a>
+</div>
+

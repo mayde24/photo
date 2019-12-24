@@ -1,0 +1,245 @@
+.above-all {
+  color: black;
+  position: fixed;
+  top:0;
+  z-index: 0 !important;
+  .first-line-container {
+    justify-content: space-between !important;
+  }
+}
+
+.above-all-end {
+  color: white !important;
+}
+
+/* Section style ================================ */
+.section {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  video {
+    transition: 1.5s;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+}
+
+.animation {
+  transition: 1s;
+  video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.5s;
+    height: 85vh;
+    width: 85vw;
+  }
+}
+
+.animation2 {
+  transition: 1s;
+  video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.5s;
+    height: 100vh !important;
+    width: 100vw !important;
+  }
+}
+
+/* Content text ======================================= */
+
+.content-container {
+  margin: 0 auto;
+  width: 85vw;
+  position: relative;
+}
+
+.text-start {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+.content-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 150px;
+  height: 50vh;
+}
+
+.content-text {
+  padding: 20px;
+  font-weight: lighter;
+  font-size: 18px;
+  width: 40vw;
+  padding-top: 0;
+}
+
+.content-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 150px;
+  margin-top: 150px;
+}
+.container-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 60vw;
+  padding: 0;
+}
+
+.text-start-right {
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: right;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.text-right {
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+/* Image effet parralax =================================== */
+.image-container {
+  position:relative;
+  overflow:hidden;
+  img {
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,.4);
+  }
+}
+
+.image1 {
+  box-shadow: 0 0 15px rgba(0,0,0,.4);
+}
+
+.image2 {
+  position: absolute;
+  margin-left: 20vw;
+  margin-top: -10vh;
+  box-shadow: 0 0 15px rgba(0,0,0,.4);
+}
+
+.image-para1 {
+  width: 40vw;
+}
+
+.image-para2 {
+  width: 35vw;
+}
+
+.image-container2 {
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,.4);
+  height: 25vw;
+  background-size: cover;
+}
+
+.image11 {
+  width: 60vw;
+}
+
+.image22 {
+  position: absolute;
+  margin-left: 15vw;
+  margin-top: -5vh;
+  width: 50vw;
+}
+
+.content-line2 {
+  height: 50vw;
+  margin-bottom: 150px;
+}
+
+/* Arrow & carousel Style ============================= */
+.arrow-left-container, .arrow-right-container {
+  width: 100px;
+  opacity: 0.2;
+  transition: 1s;
+  img {
+    transition: 1s;
+    width: 100px;
+    object-fit: cover;
+  }
+}
+
+.arrow-left-container:hover, .arrow-right-container:hover {
+  opacity: 0.6;
+}
+
+.arrow-right {
+  margin-left: 65vw;
+  margin-top: -37vw;
+}
+
+.arrow-left {
+  margin-top: 10vw;
+  margin-left: 8vw;
+}
+
+/* Tous les backgrounds ================================== */
+
+.back3 {
+  background-image: url('../../assets/project33.jpg');
+  animation: fade-magic 1.5s 1;
+}
+
+.back4 {
+  background-image: url('../../assets/project34.jpg');
+  animation: fade-magic2 1.5s 1;
+}
+
+.back5 {
+  background-image: url('../../assets/project35.jpg');
+  animation: fade-magic 1.5s 1;
+}
+
+.back6 {
+  background-image: url('../../assets/project36.jpg');
+  animation: fade-magic2 1.5s 1;
+}
+.back7 {
+  background-image: url('../../assets/project37.jpg');
+  animation: fade-magic 1.5s 1;
+}
+
+.back8 {
+  background-image: url('../../assets/project38.jpg');
+  animation: fade-magic2 1.5s 1;
+}
+
+@keyframes fade-magic {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-magic2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
