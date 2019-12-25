@@ -1,29 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-project-one',
   templateUrl: './project-one.component.html',
   styleUrls: ['./project-one.component.scss']
 })
-export class ProjectOneComponent implements OnInit {
+export class ProjectOneComponent implements OnInit, OnDestroy{
 
   clicked1 = false;
   about = false;
   gone = false;
   time = false;
   index = 3;
-  constructor() {}
+  constructor(public router: Router,
+              public data: DataService) {}
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    if (this.data.lastProjectId == 1) {
+      document.getElementById('video1').currentTime = this.data.timecode;
+    }
     setTimeout( () => {
       this.clicked1 = true;
     }, 1);
+    setTimeout( () => {
+      this.data.hide = true;
+    }, 100);
+  }
+  ngOnDestroy(): void {
+    this.data.hide = false;
   }
   back() {
     this.clicked1 = false;
+    window.scrollTo(0, 0);
     setTimeout(() => {
-      window.location.href = '/home';
+      this.data.timecode = document.getElementById('video1').currentTime;
+      this.router.navigate([`/home`]);
     }, 1100);
   }
   right() {
@@ -52,5 +66,10 @@ export class ProjectOneComponent implements OnInit {
       this.about = false;
       this.time = false;
     }, 1000);
+  }
+  link() {
+    this.data.lastProjectId = 2;
+    this.data.timecode = 0;
+    this.router.navigate([`/project2`]);
   }
 }

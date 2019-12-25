@@ -1,7 +1,7 @@
 <div class="about-container" [ngClass]="{'hidden': about == false, 'about-end': time}" id="top">
   <div class="about-content" [ngClass]="{'fade-up': time}">
     <div class="first-about-line">
-      <img src="../../assets/close.png" alt="" (click)="aboutClose()">
+      <img src="../../../assets/close.png" alt="" (click)="aboutClose()">
     </div>
     <div class="rest-about">
       <div class="text-vertical">ESMEL</div>
@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<div [ngClass]="{'hidden': gone}" routerLinkActive="active">
+<div [ngClass]="{'hidden': gone}">
   <div class="above-all" [ngClass]="{'above-all-end': clicked1 == false}">
     <div class="first-line-container">
       <div class="text" (click)="back()">Back</div>
@@ -28,9 +28,9 @@
   </div>
 
   <div class="carousel-container">
-    <div class="section" id="project1" [ngClass]="{'animation': clicked1}">
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="../../assets/project1.mp4" type="video/mp4">
+    <div class="section2" id="project1" [ngClass]="{'animation': clicked1}">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video1">
+        <source src="../../../assets/project1.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -42,13 +42,13 @@
         <div class="image1">
           <div class="image-container">
             <!--          <img src="../../assets/project11.jpg" class="image-para" data-bottom-top="transform:translate3d(0, 100px, 0)" data-top-bottom="transform:translate3d(0, -100px, 0)">-->
-            <img src="../../assets/project11.jpg" class="image-para1">
+            <img src="../../../assets/project11.jpg" class="image-para1">
           </div>
         </div>
         <div class="image2">
           <div class="image-container">
             <!--          <img src="../../assets/project12.jpg" class="image-para" data-bottom-top="transform:translate3d(0, 100px, 0)" data-top-bottom="transform:translate3d(0, -100px, 0)">-->
-            <img src="../../assets/project12.jpg" class="image-para2">
+            <img src="../../../assets/project12.jpg" class="image-para2">
           </div>
         </div>
       </div>
@@ -95,16 +95,14 @@
           <div class="image-container2 image22 back10"></div>
         </div>
       </div>
-      <div class="arrow-right-container" (click)="right()" [ngClass]="{'notVisible': index == 9}"><img src="../../assets/arrow-right.png" alt="" class="arrow-right"></div>
-      <div class="arrow-left-container" (click)="left()" [ngClass]="{'notVisible': index == 3}"><img src="../../assets/arrow-left.png" alt="" class="arrow-left"></div>
+      <div class="arrow-right-container" (click)="right()" [ngClass]="{'notVisible': index == 9}"><img src="../../../assets/arrow-right.png" alt="" class="arrow-right"></div>
+      <div class="arrow-left-container" (click)="left()" [ngClass]="{'notVisible': index == 3}"><img src="../../../assets/arrow-left.png" alt="" class="arrow-left"></div>
     </div>
   </div>
 
-  <a routerLink="/project2">
-    <div class="other-project">
-      <div class="text1">Next project</div>
-      <div class="text2">X name Random</div>
-    </div>
-  </a>
+  <div class="other-project" (click)="link()">
+    <div class="text1">Next project</div>
+    <div class="text2">X name Random</div>
+  </div>
 </div>
 

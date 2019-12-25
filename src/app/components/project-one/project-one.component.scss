@@ -13,7 +13,7 @@
 }
 
 /* Section style ================================ */
-.section {
+.section2 {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -22,24 +22,28 @@
   justify-content: center;
   align-items: center;
   video {
-    transition: 1.5s;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-  }
-}
-
-.animation {
-  transition: 1s;
-  video {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 85vh;
+    width: 85vw;
     transition: 1.5s;
+    object-fit: cover;
+    animation: un-zoom 1.5s 1;
+  }
+}
+
+@keyframes un-zoom {
+  0% {
+    height: 100vh;
+    width: 100vw;
+  }
+  100% {
     height: 85vh;
     width: 85vw;
   }
 }
+
 
 .animation2 {
   transition: 1s;
@@ -195,41 +199,41 @@
 /* Tous les backgrounds ================================== */
 
 .back3 {
-  background-image: url('../../assets/project13.jpg');
+  background-image: url('../../../assets/project13.jpg');
   animation: fade-magic 1.5s 1;
 }
 
 .back4 {
-  background-image: url('../../assets/project14.jpg');
+  background-image: url('../../../assets/project14.jpg');
   animation: fade-magic2 1.5s 1;
 
 }
 
 .back5 {
-  background-image: url('../../assets/project15.jpg');
+  background-image: url('../../../assets/project15.jpg');
   animation: fade-magic 1.5s 1;
 }
 
 .back6 {
-  background-image: url('../../assets/project16.jpg');
+  background-image: url('../../../assets/project16.jpg');
   animation: fade-magic2 1.5s 1;
 }
 .back7 {
-  background-image: url('../../assets/project17.jpg');
+  background-image: url('../../../assets/project17.jpg');
   animation: fade-magic 1.5s 1;
 }
 
 .back8 {
-  background-image: url('../../assets/project18.jpg');
+  background-image: url('../../../assets/project18.jpg');
   animation: fade-magic2 1.5s 1;
 }
 .back9 {
-  background-image: url('../../assets/project19.jpg');
+  background-image: url('../../../assets/project19.jpg');
   animation: fade-magic 1.5s 1;
 }
 
 .back10 {
-  background-image: url('../../assets/project110.jpg');
+  background-image: url('../../../assets/project110.jpg');
   animation: fade-magic2 1.5s 1;
 }
 

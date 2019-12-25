@@ -1,7 +1,7 @@
 <div class="about-container" [ngClass]="{'hidden': about == false, 'about-end': time}">
   <div class="about-content" [ngClass]="{'fade-up': time}">
     <div class="first-about-line">
-      <img src="../../assets/close.png" alt="" (click)="aboutClose()">
+      <img src="../../../assets/close.png" alt="" (click)="aboutClose()">
     </div>
     <div class="rest-about">
       <div class="text-vertical">ESMEL</div>
@@ -26,36 +26,37 @@
     </div>
   </div>
 
-  <div class="carousel-container" routerLinkActive="active">
+  <div class="carousel-container">
     <ngb-carousel #myCarousel class="carousel" (swipeleft)="next()" (swiperight)="prev()" (scroll)="next()"
                   [showNavigationArrows]="true"
                   [showNavigationIndicators]="true"
                   interval="200000"
                   [keyboard]="true"
+                  [activeId]="activeId"
                   [wrap]="true">
-      <ng-template ngbSlide>
-        <div class="section" id="project1">
-          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="../../assets/project1.mp4" type="video/mp4">
+      <ng-template ngbSlide id="project1">
+        <div class="section">
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video1">
+            <source src="../../../assets/project1.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="text-video"><a routerLink="/project1">View Project</a></div>
+        <div class="text-video" (click)="view(1)">View Project</div>
       </ng-template>
-      <ng-template ngbSlide>
-        <div class="section" id="project2">
-          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="../../assets/project2.mp4" type="video/mp4">
+      <ng-template ngbSlide id="project2">
+        <div class="section">
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video2">
+            <source src="../../../assets/project2.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="text-video"><a routerLink="/project2">View Project</a></div>
+        <div class="text-video" (click)="view(2)">View Project</div>
       </ng-template>
-      <ng-template ngbSlide>
-        <div class="section" id="project3">
-          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="../../assets/project3.mp4" type="video/mp4">
+      <ng-template ngbSlide id="project3">
+        <div class="section">
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video3">
+            <source src="../../../assets/project3.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="text-video"><a routerLink="/project3">View Project</a></div>
+        <div class="text-video" (click)="view(3)">View Project</div>
       </ng-template>
     </ngb-carousel>
   </div>

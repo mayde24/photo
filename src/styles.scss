@@ -1,1 +1,266 @@
 /* You can add global styles to this file, and also import other style files */
+.body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  z-index: 500;
+}
+
+.carousel-control-prev {
+  margin-left: 8vw;
+}
+
+.carousel-control-next {
+  margin-right: 8vw;
+}
+
+.notVisible {
+  opacity: 0 !important;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Above all style ===================================== */
+.above-all {
+  background: transparent;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  color: white;
+  font-weight: bolder;
+  .first-line-container {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    .text {
+      padding: 20px;
+      text-align: center;
+      font-size: 15px;
+      transition: 1s;
+      font-weight: lighter;
+    }
+    .text:hover {
+      letter-spacing: .1rem;
+    }
+  }
+  .rest-container {
+    padding: 0;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.text-video {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  transition: 1s;
+  z-index: 500;
+  top: 80vh;
+  width: 100vw;
+}
+
+.text-video:hover {
+  letter-spacing: .1rem;
+}
+
+.text-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 20px;
+  padding: 20px;
+}
+
+/* ScrollBar Style ---------- */
+/* width */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #A6C4C4;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0E7C7C;
+}
+
+/* About Container Style =============================================== */
+.about-container {
+  position: absolute;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  animation: about-down 1s 1;
+  z-index: 5000;
+  .first-about-line {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    padding: 20px;
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+  }
+  .rest-about {
+    height: 90vh;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .text-about {
+    text-align: justify;
+    font-size: 15px;
+    padding: 80px;
+    font-weight: lighter;
+  }
+}
+
+.about-content {
+  animation: about-fade 1.5s 1;
+}
+
+.text-red {
+  font-weight: bold;
+  color: darkred;
+}
+
+@keyframes about-down {
+  0% {
+    transform: translate(0px, -100vh);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes about-fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translate(0px, -50px);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translate(0px, 0px);
+  }
+}
+
+.about-end {
+  animation: about-up 1s 1 !important;
+}
+
+.fade-up {
+  animation: fade-inverse 1s 1 !important;
+}
+
+@keyframes fade-inverse {
+  100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+    transform: translate(0px, -50px);
+  }
+  0% {
+    opacity: 0.9;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes about-up {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, -100vh);
+  }
+}
+
+.cute-fade {
+  animation: fade-now 1s 1;
+}
+
+@keyframes fade-now {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Other project ===================================================== */
+.other-project {
+  position: absolute;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 40vh;
+  z-index: 500;
+  transition: 1s;
+  color: black;
+  .text1 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .text2 {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+}
+
+.other-project:hover {
+  background: black;
+  color:white;
+}

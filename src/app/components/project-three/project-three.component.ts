@@ -1,29 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-project-three',
   templateUrl: './project-three.component.html',
   styleUrls: ['./project-three.component.scss']
 })
-export class ProjectThreeComponent implements OnInit {
+export class ProjectThreeComponent implements OnInit, OnDestroy {
 
   clicked2 = false;
   about = false;
   gone = false;
   time = false;
   index = 3;
-  constructor() {}
+  constructor(public router: Router,
+              public data: DataService) {}
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    if (this.data.lastProjectId == 3) {
+      document.getElementById('video3').currentTime = this.data.timecode;
+    }
     setTimeout( () => {
       this.clicked2 = true;
     }, 1);
+    setTimeout( () => {
+      this.data.hide = true;
+    }, 100);
+  }
+  ngOnDestroy(): void {
+    this.data.hide = false;
   }
   back() {
+    window.scrollTo(0, 0);
     this.clicked2 = false;
     setTimeout(() => {
-      window.location.href = '/home';
+      this.data.timecode = document.getElementById('video3').currentTime;
+      this.router.navigate([`/home`]);
+
     }, 1100);
   }
   right() {
@@ -53,5 +68,9 @@ export class ProjectThreeComponent implements OnInit {
       this.time = false;
     }, 1000);
   }
-
+  link() {
+    this.data.lastProjectId = 1;
+    this.data.timecode = 0;
+    this.router.navigate([`/project1`]);
+  }
 }
