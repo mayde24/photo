@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarouselConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../services/data.service';
 import {Router} from '@angular/router';
+import set = Reflect.set;
 
 @Component({
   selector: 'app-home',
@@ -22,8 +23,16 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.activeId = `project${this.data.lastProjectId}`;
     setTimeout(() => {
+      // @ts-ignore
       document.getElementById(`video${this.data.lastProjectId}`).currentTime = this.data.timecode;
     }, 50);
+    setTimeout(() => {
+      // @ts-ignore
+      console.log('Current timecode of video : ' + document.getElementById(`video${this.data.lastProjectId}`).currentTime);
+      console.log('Last timecode register : ' + this.data.timecode);
+      console.log('Last project : ' + this.data.lastProjectId);
+      console.log('Carousel actif : ' + this.activeId );
+    }, 1500);
   }
   next() {
     this.carousel.next();

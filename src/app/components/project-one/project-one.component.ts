@@ -20,6 +20,7 @@ export class ProjectOneComponent implements OnInit, OnDestroy{
   ngOnInit() {
     window.scrollTo(0, 0);
     if (this.data.lastProjectId == 1) {
+      // @ts-ignore
       document.getElementById('video1').currentTime = this.data.timecode;
     }
     setTimeout( () => {
@@ -36,6 +37,7 @@ export class ProjectOneComponent implements OnInit, OnDestroy{
     this.clicked1 = false;
     window.scrollTo(0, 0);
     setTimeout(() => {
+      // @ts-ignore
       this.data.timecode = document.getElementById('video1').currentTime;
       this.router.navigate([`/home`]);
     }, 1100);

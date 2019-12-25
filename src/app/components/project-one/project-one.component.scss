@@ -57,6 +57,17 @@
   }
 }
 
+@keyframes putain-zoom {
+  0% {
+    height: 85vh;
+    width: 85vw;
+  }
+  100% {
+    height: 100vh !important;
+    width: 100vw !important;
+  }
+}
+
 /* Content text ======================================= */
 
 .content-container {
