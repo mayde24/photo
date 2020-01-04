@@ -1,6 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {DataService} from '../../services/data.service';
+import {NgbCarousel, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {Subscription} from 'rxjs';
+import set = Reflect.set;
 
 @Component({
   selector: 'app-project-one',
@@ -8,23 +11,32 @@ import {DataService} from '../../services/data.service';
   styleUrls: ['./project-one.component.scss']
 })
 export class ProjectOneComponent implements OnInit, OnDestroy{
-
-  clicked1 = false;
+  @ViewChild('myCarousel', {static: true}) carousel: NgbCarousel;
   about = false;
   gone = false;
   time = false;
   index = 3;
+  timecode: number;
+  timecodeSubscription: Subscription;
+
   constructor(public router: Router,
               public data: DataService) {}
 
   ngOnInit() {
+    this.timecodeSubscription = this.data.timecodeSubject.subscribe(
+      (timecode) => {
+        this.timecode = timecode;
+      }
+    );
+    this.data.emit();
+
     window.scrollTo(0, 0);
     if (this.data.lastProjectId == 1) {
       // @ts-ignore
       document.getElementById('video1').currentTime = this.data.timecode;
     }
     setTimeout( () => {
-      this.clicked1 = true;
+      this.data.clicked1 = true;
     }, 1);
     setTimeout( () => {
       this.data.hide = true;
@@ -34,13 +46,21 @@ export class ProjectOneComponent implements OnInit, OnDestroy{
     this.data.hide = false;
   }
   back() {
-    this.clicked1 = false;
+    this.data.clicked1 = false;
     window.scrollTo(0, 0);
     setTimeout(() => {
       // @ts-ignore
       this.data.timecode = document.getElementById('video1').currentTime;
-      this.router.navigate([`/home`]);
-    }, 1100);
+      this.data.emit();
+      this.data.again0();
+      this.data.show = 0;
+    }, 1000);
+  }
+  next() {
+    this.carousel.next();
+  }
+  prev() {
+    this.carousel.prev();
   }
   right() {
     if (this.index < 9) {
@@ -72,6 +92,9 @@ export class ProjectOneComponent implements OnInit, OnDestroy{
   link() {
     this.data.lastProjectId = 2;
     this.data.timecode = 0;
-    this.router.navigate([`/project2`]);
+    this.data.emit();
+    this.data.clicked1 = false;
+    this.data.again2();
+    this.data.show = 2;
   }
 }

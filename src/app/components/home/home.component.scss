@@ -15,3 +15,9 @@
   }
 }
 
+.fakeButton {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -100;
+  position: absolute;
+}

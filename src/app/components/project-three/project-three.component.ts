@@ -1,6 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {DataService} from '../../services/data.service';
+import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-project-three',
@@ -8,23 +10,32 @@ import {DataService} from '../../services/data.service';
   styleUrls: ['./project-three.component.scss']
 })
 export class ProjectThreeComponent implements OnInit, OnDestroy {
-
-  clicked2 = false;
+  @ViewChild('myCarousel', {static: true}) carousel: NgbCarousel;
   about = false;
   gone = false;
   time = false;
   index = 3;
+  timecode: number;
+  timecodeSubscription: Subscription;
+
   constructor(public router: Router,
               public data: DataService) {}
 
   ngOnInit() {
+    this.timecodeSubscription = this.data.timecodeSubject.subscribe(
+      (timecode) => {
+        this.timecode = timecode;
+      }
+    );
+    this.data.emit();
+
     window.scrollTo(0, 0);
     if (this.data.lastProjectId == 3) {
       // @ts-ignore
       document.getElementById('video3').currentTime = this.data.timecode;
     }
     setTimeout( () => {
-      this.clicked2 = true;
+      this.data.clicked3 = true;
     }, 1);
     setTimeout( () => {
       this.data.hide = true;
@@ -35,13 +46,21 @@ export class ProjectThreeComponent implements OnInit, OnDestroy {
   }
   back() {
     window.scrollTo(0, 0);
-    this.clicked2 = false;
+    this.data.clicked3 = false;
     setTimeout(() => {
       // @ts-ignore
       this.data.timecode = document.getElementById('video3').currentTime;
-      this.router.navigate([`/home`]);
+      this.data.emit();
+      this.data.again0();
+      this.data.show = 0;
 
-    }, 1100);
+    }, 1000);
+  }
+  next() {
+    this.carousel.next();
+  }
+  prev() {
+    this.carousel.prev();
   }
   right() {
     if (this.index < 7) {
@@ -73,6 +92,9 @@ export class ProjectThreeComponent implements OnInit, OnDestroy {
   link() {
     this.data.lastProjectId = 1;
     this.data.timecode = 0;
-    this.router.navigate([`/project1`]);
+    this.data.emit();
+    this.data.clicked3 = false;
+    this.data.again1();
+    this.data.show = 1;
   }
 }

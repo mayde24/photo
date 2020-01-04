@@ -29,6 +29,11 @@
     width: 85vw;
     transition: 1.5s;
     object-fit: cover;
+  }
+}
+
+.animation1 {
+  video {
     animation: un-zoom 1.5s 1;
   }
 }
@@ -207,6 +212,109 @@
   margin-left: 8vw;
 }
 
+@media (max-width: 1100px) {
+  .text-start, .text-start-right {
+    font-size: 20px
+  }
+  .content-text {
+    font-size: 13px;
+  }
+  .container-right {
+    width: 70vw;
+  }
+  .content-right {
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+  .text-right {
+    font-size: 15px;
+  }
+  .content-line2, .content-line {
+    margin-bottom: 150px !important;
+  }
+  .content-line {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 880px) {
+  .image-para1 {
+    width: 70vw;
+    margin: 0 auto;
+  }
+  .image-para2 {
+    width: 65vw;
+    margin: 0 auto;
+  }
+  .content-text {
+    font-size: 15px;
+    padding-left: 0;
+    width: 65vw;
+    margin-top: 150px;
+  }
+  .content-line, .content-line2 {
+    margin-bottom: 50px !important;
+  }
+  .content-line {
+    flex-direction: column;
+  }
+  .image22 {
+    margin-top: 5vh;
+  }
+}
+
+.phone {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  .image11 {
+    width: 80vw;
+    min-height: 200px;
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.arrow-left-back {
+  padding-left: 10px;
+}
+.arrow-back {
+  width: 40px;
+}
+
+@media (max-width: 550px) {
+  .content-container {
+    width: 80vw;
+  }
+  .text-start, .text-start-right {
+    font-size: 16px
+  }
+  .content-text {
+    font-size: 12px;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .text-right {
+    font-size: 13px;
+  }
+  .image-para2 {
+    width: 60vw;
+  }
+  .content-text {
+    margin-top: 130px;
+  }
+  .container-right {
+    width: 100%;
+  }
+  .image2 {
+    margin-top: -5vh;
+  }
+}
+
 /* Tous les backgrounds ================================== */
 
 .back3 {
@@ -237,6 +345,36 @@
   background-image: url('../../../assets/project38.jpg');
   animation: fade-magic2 1.5s 1;
 }
+
+.back33 {
+  background-image: url('../../../assets/project33.jpg');
+  animation: fade-magic 1.5s 1;
+}
+
+.back44 {
+  background-image: url('../../../assets/project34.jpg');
+  animation: fade-magic 1.5s 1;
+}
+
+.back55 {
+  background-image: url('../../../assets/project35.jpg');
+  animation: fade-magic 1.5s 1;
+}
+
+.back66 {
+  background-image: url('../../../assets/project36.jpg');
+  animation: fade-magic 1.5s 1;
+}
+.back77 {
+  background-image: url('../../../assets/project37.jpg');
+  animation: fade-magic 1.5s 1;
+}
+
+.back88 {
+  background-image: url('../../../assets/project38.jpg');
+  animation: fade-magic 1.5s 1;
+}
+
 
 @keyframes fade-magic {
   0% {

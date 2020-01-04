@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div class="home" [ngClass]="{'minima': data.show != 0}">
+  <app-home></app-home>
+</div>
+<div class="home" [ngClass]="{'minima': data.show != 1}">
+  <app-project-one></app-project-one>
+</div>
+<div class="home" [ngClass]="{'minima': data.show != 2}">
+  <app-project-two></app-project-two>
+</div>
+<div class="home" [ngClass]="{'minima': data.show != 3}">
+  <app-project-three></app-project-three>
+</div>

@@ -3,12 +3,18 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 100vw;
   overflow-x: hidden;
+  overflow-y: visible !important;
   position: relative;
+}
+
+ngb-carousel {
+  outline: none;
 }
 
 html {
   width: 100vw;
   overflow-x: hidden;
+  overflow-y: visible !important;
   scroll-behavior: smooth;
 }
 
@@ -37,6 +43,10 @@ a:hover {
 }
 
 .hidden {
+  display: none;
+}
+
+.minima {
   display: none;
 }
 
@@ -78,6 +88,15 @@ a:hover {
   }
 }
 
+//@keyframes ligne-down {
+//  0% {
+//    transform: translate(0px, 0px);
+//  }
+//  100% {
+//    transform: translate(0px, 100px);
+//  }
+//}
+
 .text-video {
   color: white;
   text-align: center;
@@ -98,6 +117,34 @@ a:hover {
   text-orientation: upright;
   font-size: 20px;
   padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 880px) {
+  .above-all {
+    .text {
+      padding: 10px !important;
+      font-size: 13px;
+    }
+    .text-vertical {
+      padding: 10px !important;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .above-all {
+    font-weight: bolder !important;
+    .text-vertical {
+      padding: 2px !important;
+      font-size: 15px;
+    }
+    .text {
+      font-size: 11px;
+    }
+  }
 }
 
 /* ScrollBar Style ---------- */
@@ -154,9 +201,62 @@ a:hover {
   }
   .text-about {
     text-align: justify;
-    font-size: 15px;
+    font-size: 18px;
     padding: 80px;
     font-weight: lighter;
+  }
+}
+
+@media (max-width: 880px) {
+  .about-container{
+    .text {
+      padding: 10px !important;
+      font-size: 13px;
+    }
+    .text-vertical {
+      padding: 10px !important;
+      font-size: 16px;
+    }
+    .text-about {
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+}
+
+
+@media (max-width: 550px) {
+  .about-container{
+    .text-about {
+      padding: 5px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .about-container{
+    .text-about {
+      padding: 5px;
+      font-size: 11px;
+    }
+  }
+}
+
+@media (min-height: 900px) {
+  .about-container{
+    .text {
+      padding: 20px !important;
+      font-size: 13px;
+    }
+    .text-vertical {
+      padding: 20px !important;
+      font-size: 16px;
+    }
+    .text-about {
+      padding: 30px;
+      font-size: 25px;
+    }
   }
 }
 
@@ -249,6 +349,7 @@ a:hover {
   z-index: 500;
   transition: 1s;
   color: black;
+  margin-top: 50px;
   .text1 {
     font-size: 25px;
     font-weight: bold;
@@ -263,4 +364,10 @@ a:hover {
 .other-project:hover {
   background: black;
   color:white;
+}
+
+@media (max-width: 880px) {
+  .other-project {
+    height: 25vh !important;
+  }
 }

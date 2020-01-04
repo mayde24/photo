@@ -6,9 +6,8 @@
     <div class="rest-about">
       <div class="text-vertical">ESMEL</div>
       <div class="text-about">
-        <span class="text-red">Duis laoreet purus risus, vitae ultricies turpis vestibulum eu. </span> Vestibulum feugiat velit augue, condimentum volutpat enim cursus sit amet. Nam convallis orci in neque porttitor gravida. Integer dapibus metus arcu, sit amet hendrerit est suscipit et. Mauris maximus neque sit amet egestas suscipit. Donec pretium dignissim nunc, nec vehicula dui porta non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt egestas leo, eu scelerisque libero malesuada a. Nullam vitae porttitor tellus. Donec mollis, sem ac feugiat congue, mi mi aliquam magna, sed tristique ex odio et massa. <br> <br>
-        <span class="text-red">Ut eget tellus non diam varius bibendum. Pellentesque sit amet sem vel risus imperdiet ultricies non quis nibh. Maecenas congue euismod libero, sit amet tincidunt elit consectetur a. </span> Aliquam erat volutpat. Nam ullamcorper dapibus ante, et sollicitudin arcu mattis nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque nunc sem, aliquam a ante sit amet, blandit scelerisque enim. Quisque dignissim, est vitae luctus efficitur. <span class="text-red">Dolor ligula vehicula arcu, non porta dolor nisl quis lectus. Curabitur tristique sollicitudin purus, nec viverra odio tristique non. Proin at leo fermentum. </span> Interdum diam sit amet, ultricies velit.<br> <br>
-        Duis laoreet purus risus, vitae ultricies turpis vestibulum eu. Vestibulum feugiat velit augue, condimentum volutpat enim cursus sit amet. Nam convallis orci in neque porttitor gravida. Integer dapibus metus arcu, sit amet hendrerit est suscipit et. Mauris maximus neque sit amet egestas suscipit. Donec pretium dignissim nunc, nec vehicula dui porta non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt egestas leo, eu scelerisque libero malesuada a. Nullam vitae porttitor tellus. Donec mollis, sem ac feugiat congue, mi mi aliquam magna, sed tristique ex odio et massa.
+        <span class="text-red">Passionate about images, I developed my passion for photography thanks to the Lumière Brothers and the Pays d'Oz. </span> Indeed, it is while returning from a trip to Australia immortalized by my first reflex camera, when I had finished my studies in Cinema and Audiovisual, that I decided to become a Photographer. After several years of practice during various trips and a training in Paris, I take the step to become a full-time Photographer. Influenced by reportage, dreamlike and cinematographic universes, I try to tell a story where the human always has a big place. <br> <br>
+        <span class="text-red">Winner of the "Instagram - National Geographic Traveler" award,</span> I won a world tour in 2016 on the theme of immersion travel photography that took me from Tanzania to Peru, through India, Laos, Hong Kong and New Zealand. Today I am one of the photographers of the Photographers of the World agency Photographers of the World and I propose to accompany groups of travellers for photo workshops abroad.<br> <br>
       </div>
       <div class="text-vertical">LIAN</div>
     </div>
@@ -16,9 +15,11 @@
 </div>
 
 <div [ngClass]="{'hidden': gone}">
-  <div class="above-all" [ngClass]="{'above-all-end': clicked1 == false}">
+
+  <div class="above-all" [ngClass]="{'above-all-end': data.clicked1 == false}">
     <div class="first-line-container">
-      <div class="text" (click)="back()">Back</div>
+      <div class="text" (click)="back()" *ngIf="data.largeur > 650">Back</div>
+      <div class="arrow-left-back" (click)="back()" *ngIf="data.largeur < 650"><img src="../../../assets/arrow-left.png" alt="" class="arrow-back"></div>
       <div class="text" (click)="aboutOpen()">About</div>
     </div>
     <div class="rest-container">
@@ -28,7 +29,7 @@
   </div>
 
   <div class="carousel-container">
-    <div class="section2" id="project1" [ngClass]="{'animation2': !clicked1}">
+    <div class="section2" id="project1" [ngClass]="{'animation2': !data.clicked1, 'animation1': data.clicked1}">
       <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video1">
         <source src="../../../assets/project1.mp4" type="video/mp4">
       </video>
@@ -36,7 +37,7 @@
   </div>
 
   <div class="content-container">
-    <div class="text-start">Donec non mattis quam<br>Eget tempus lacus</div>
+    <div class="text-start">Life is like à poppy<br>Fragile but beautiful</div>
     <div class="content-line">
       <div class="content-image">
         <div class="image1">
@@ -53,56 +54,123 @@
         </div>
       </div>
       <div class="content-text">
-        Curabitur metus nisi, suscipit et luctus eget, efficitur sed ipsum. Vestibulum nec molestie metus. Duis sed lacus sed ipsum convallis interdum. Cras lectus ante, vehicula et tempus at, lacinia eget mauris. Nullam rhoncus lectus eget condimentum consectetur. Ut molestie metus purus, ut pulvinar mi interdum eget
+        It is in the heart of Lozere that I was able to capture the beauty of a wild poppy field.
+        Primitive and beautiful, these are the words that come to mind while admiring the blood red of its flowers.
       </div>
     </div>
     <div class="content-right">
       <div class="container-right">
-        <div class="text-start-right">Donec non mattis quam, eget tempus lacus</div>
-        <div class="text-right">Duis leo tellus, facilisis ut sollicitudin ut, posuere eget enim. Fusce vel finibus tortor. Sed sapien orci, eleifend sed mauris et, convallis facilisis magna.Duis leo tellus, facilisis ut sollicitudin ut, posuere eget enim. Fusce vel finibus tortor. Sed sapien orci, eleifend sed mauris et, convallis facilisis magna.</div>
+        <div class="text-start-right">Nature cannot lie but art embellishes it</div>
+        <div class="text-right">Nature is one of the things I like to take pictures of the most. It allows me to see an evolution: the growth of a stem that extends towards life, and the violent decrease that the environment undergoes through our actions. My camera is a witness to this. </div>
       </div>
     </div>
     <div class="content-line2">
-      <div class="content-image" [ngClass]="{'hidden': index != 3}">
-        <div class="image">
-          <div class="image-container2 image11 back3"></div>
+      <div class="desktop" *ngIf="data.largeur > 650">
+        <div class="content-image" [ngClass]="{'hidden': index != 3}">
+          <div class="image">
+            <div class="image-container2 image11 back3"></div>
+          </div>
+          <div class="image2">
+            <div class="image-container2 image22 back4"></div>
+          </div>
         </div>
-        <div class="image2">
-          <div class="image-container2 image22 back4"></div>
+        <div class="content-image" [ngClass]="{'hidden': index != 5}">
+          <div class="image">
+            <div class="image-container2 image11 back5"></div>
+          </div>
+          <div class="image2">
+            <div class="image-container2 image22 back6"></div>
+          </div>
         </div>
+        <div class="content-image" [ngClass]="{'hidden': index != 7}">
+          <div class="image">
+            <div class="image-container2 image11 back7"></div>
+          </div>
+          <div class="image2">
+            <div class="image-container2 image22 back8"></div>
+          </div>
+        </div>
+        <div class="content-image" [ngClass]="{'hidden': index != 9}">
+          <div class="image">
+            <div class="image-container2 image11 back9"></div>
+          </div>
+          <div class="image2">
+            <div class="image-container2 image22 back10"></div>
+          </div>
+        </div>
+        <div class="arrow-right-container" (click)="right()" [ngClass]="{'notVisible': index == 9}"><img src="../../../assets/arrow-right.png" alt="" class="arrow-right"></div>
+        <div class="arrow-left-container" (click)="left()" [ngClass]="{'notVisible': index == 3}"><img src="../../../assets/arrow-left.png" alt="" class="arrow-left"></div>
       </div>
-      <div class="content-image" [ngClass]="{'hidden': index != 5}">
-        <div class="image">
-          <div class="image-container2 image11 back5"></div>
-        </div>
-        <div class="image2">
-          <div class="image-container2 image22 back6"></div>
-        </div>
+      <div class="phone" *ngIf="data.largeur < 650">
+        <ngb-carousel #myCarousel class="carousel" (swipeleft)="next()" (swiperight)="prev()"
+                      [showNavigationArrows]="true"
+                      [showNavigationIndicators]="true"
+                      interval="3000"
+                      [wrap]="true" >
+          <ng-template ngbSlide>
+            <div class="section">
+              <div class="image">
+                <div class="image-container2 image11 back33"></div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="section">
+              <div class="image">
+                <div class="image-container2 image11 back44"></div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="section">
+              <div class="image">
+                <div class="image-container2 image11 back55"></div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="section">
+              <div class="image">
+                <div class="image-container2 image11 back66"></div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="section">
+              <div class="image">
+                <div class="image-container2 image11 back77"></div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="section">
+              <div class="image">
+                <div class="image-container2 image11 back88"></div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="section">
+              <div class="image">
+                <div class="image-container2 image11 back99"></div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="section">
+              <div class="image">
+                <div class="image-container2 image11 back100"></div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
       </div>
-      <div class="content-image" [ngClass]="{'hidden': index != 7}">
-        <div class="image">
-          <div class="image-container2 image11 back7"></div>
-        </div>
-        <div class="image2">
-          <div class="image-container2 image22 back8"></div>
-        </div>
-      </div>
-      <div class="content-image" [ngClass]="{'hidden': index != 9}">
-        <div class="image">
-          <div class="image-container2 image11 back9"></div>
-        </div>
-        <div class="image2">
-          <div class="image-container2 image22 back10"></div>
-        </div>
-      </div>
-      <div class="arrow-right-container" (click)="right()" [ngClass]="{'notVisible': index == 9}"><img src="../../../assets/arrow-right.png" alt="" class="arrow-right"></div>
-      <div class="arrow-left-container" (click)="left()" [ngClass]="{'notVisible': index == 3}"><img src="../../../assets/arrow-left.png" alt="" class="arrow-left"></div>
     </div>
   </div>
 
   <div class="other-project" (click)="link()">
     <div class="text1">Next project</div>
-    <div class="text2">X name Random</div>
+    <div class="text2">Summer in the sun</div>
   </div>
 </div>
 

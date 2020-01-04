@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarouselConfig, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../services/data.service';
-import {Router} from '@angular/router';
-import set = Reflect.set;
+import { Router } from '@angular/router';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,26 +13,32 @@ export class HomeComponent implements OnInit {
   @ViewChild('myCarousel', {static: true}) carousel: NgbCarousel;
   about = false;
   time = false;
-  activeId: string;
+  timecode: number;
+  timecodeSubscription: Subscription;
+
   constructor(public config: NgbCarouselConfig,
               public data: DataService,
-              public router: Router) {
-
-  }
+              public router: Router) {}
 
   ngOnInit() {
-    this.activeId = `project${this.data.lastProjectId}`;
+    this.timecodeSubscription = this.data.timecodeSubject.subscribe(
+      (timecode) => {
+        this.timecode = timecode;
+      }
+    );
+    this.data.emit();
+    this.data.activeId = `project${this.data.lastProjectId}`;
+    // @ts-ignore
+    (document.getElementById('video1') as HTMLMediaElement).play();
     setTimeout(() => {
       // @ts-ignore
-      document.getElementById(`video${this.data.lastProjectId}`).currentTime = this.data.timecode;
-    }, 50);
-    setTimeout(() => {
-      // @ts-ignore
-      console.log('Current timecode of video : ' + document.getElementById(`video${this.data.lastProjectId}`).currentTime);
-      console.log('Last timecode register : ' + this.data.timecode);
-      console.log('Last project : ' + this.data.lastProjectId);
-      console.log('Carousel actif : ' + this.activeId );
-    }, 1500);
+      document.getElementById(`stream${this.data.lastProjectId}`).currentTime = this.data.timecode;
+      document.getElementById('fakeButton').click();
+    }, 1);
+  }
+  fake() {
+    // @ts-ignore
+    (document.getElementById('video1') as HTMLMediaElement).play();
   }
   next() {
     this.carousel.next();
@@ -53,7 +59,15 @@ export class HomeComponent implements OnInit {
   view(id: number) {
     // @ts-ignore
     this.data.timecode = document.getElementById(`video${id}`).currentTime;
+    this.data.emit();
     this.data.lastProjectId = id;
-    this.router.navigate([`/project${id}`]);
+    if (id == 1) {
+      this.data.again1();
+    } else if (id == 2) {
+      this.data.again2();
+    } else {
+      this.data.again3();
+    }
+    this.data.show = id;
   }
 }
