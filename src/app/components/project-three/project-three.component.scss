@@ -160,7 +160,7 @@
 }
 
 .image-para2 {
-  width: 35vw;
+  width: 30vw;
 }
 
 .image-container2 {
@@ -287,10 +287,12 @@
   width: 40px;
 }
 
-@media (min-height: 800px) {
+@media (min-height: 1000px) {
   .image-para2 {
-    height: auto;
-    width: 55vw;
+    height: 15vh;
+  }
+  .content-line2 {
+    margin-bottom: 0 !important;
   }
 }
 
