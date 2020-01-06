@@ -28,8 +28,6 @@ export class HomeComponent implements OnInit {
     );
     this.data.emit();
     this.data.activeId = `project${this.data.lastProjectId}`;
-    // @ts-ignore
-    (document.getElementById('video1') as HTMLMediaElement).play();
     setTimeout(() => {
       // @ts-ignore
       document.getElementById(`stream${this.data.lastProjectId}`).currentTime = this.data.timecode;

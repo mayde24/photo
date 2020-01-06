@@ -29,7 +29,7 @@
 
   <div class="carousel-container">
     <div class="section2" id="project1" [ngClass]="{'animation2': !data.clicked3, 'animation1': data.clicked3}">
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video3">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video3" oncanplay="this.play()" onloadedmetadata="this.muted = true">
         <source src="../../../assets/project3.mp4" type="video/mp4">
       </video>
     </div>
