@@ -35,7 +35,7 @@
                   [wrap]="true" >
       <ng-template ngbSlide id="project1">
         <div class="section">
-          <video id="stream1" autoplay muted loop preload="true">
+          <video id="stream1" autoplay muted loop preload="true" oncanplay="this.play()" onloadedmetadata="this.muted = true">
             <source src="../../../assets/project1.mp4" type="video/mp4">
           </video>
         </div>
@@ -43,7 +43,7 @@
       </ng-template>
       <ng-template ngbSlide id="project2">
         <div class="section">
-          <video autoplay muted loop id="stream2" preload="true">
+          <video autoplay muted loop id="stream2" preload="true" oncanplay="this.play()" onloadedmetadata="this.muted = true">
             <source src="../../../assets/project2.mp4" type="video/mp4">
           </video>
         </div>
@@ -51,7 +51,7 @@
       </ng-template>
       <ng-template ngbSlide id="project3">
         <div class="section">
-          <video autoplay muted loop id="stream3" preload="true">
+          <video autoplay muted loop id="stream3" preload="true" oncanplay="this.play()" onloadedmetadata="this.muted = true">
             <source src="../../../assets/project3.mp4" type="video/mp4">
           </video>
         </div>
@@ -60,9 +60,4 @@
     </ngb-carousel>
   </div>
 </div>
-
-<div class="fakeButton">
-  <button id="fakeButton" (click)="fake()"></button>
-</div>
-
 

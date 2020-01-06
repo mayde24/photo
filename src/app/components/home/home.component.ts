@@ -33,12 +33,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       // @ts-ignore
       document.getElementById(`stream${this.data.lastProjectId}`).currentTime = this.data.timecode;
-      document.getElementById('fakeButton').click();
     }, 1);
-  }
-  fake() {
-    // @ts-ignore
-    (document.getElementById('video1') as HTMLMediaElement).play();
   }
   next() {
     this.carousel.next();
