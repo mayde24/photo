@@ -28,10 +28,12 @@ export class HomeComponent implements OnInit {
     );
     this.data.emit();
     this.data.activeId = `project${this.data.lastProjectId}`;
-    setTimeout(() => {
-      // @ts-ignore
-      document.getElementById(`stream${this.data.lastProjectId}`).currentTime = this.data.timecode;
-    }, 1);
+    if (this.data.largeur > 500) {
+      setTimeout(() => {
+        // @ts-ignore
+        document.getElementById(`stream${this.data.lastProjectId}`).currentTime = this.data.timecode;
+      }, 1);
+    }
   }
   next() {
     this.carousel.next();
@@ -50,9 +52,11 @@ export class HomeComponent implements OnInit {
     }, 1000);
   }
   view(id: number) {
-    // @ts-ignore
-    this.data.timecode = document.getElementById(`video${id}`).currentTime;
-    this.data.emit();
+    if (this.data.largeur > 500) {
+      // @ts-ignore
+      this.data.timecode = document.getElementById(`video${id}`).currentTime;
+      this.data.emit();
+    }
     this.data.lastProjectId = id;
     if (id == 1) {
       this.data.again1();

@@ -29,9 +29,10 @@
 
   <div class="carousel-container">
     <div class="section2" id="project1" [ngClass]="{'animation2': !data.clicked2, 'animation1': data.clicked2}">
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video2" oncanplay="this.play()" onloadedmetadata="this.muted = true">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video2" oncanplay="this.play()" onloadedmetadata="this.muted = true" *ngIf="data.largeur > 500">
         <source src="../../../assets/project2.mp4" type="video/mp4">
       </video>
+      <img src="../../../assets/projectMini2.gif" alt="" class="all-gif" *ngIf="data.largeur < 500">
     </div>
   </div>
 

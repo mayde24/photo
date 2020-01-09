@@ -21,19 +21,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  video {
+  video, img {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 85vh;
-    width: 85vw;
+    width: 85vw !important;
     transition: 1.5s;
     object-fit: cover;
   }
 }
 
 .animation1 {
-  video {
+  video, img {
     animation: un-zoom 1.5s 1;
   }
 }
@@ -52,7 +52,7 @@
 
 .animation2 {
   transition: 1s;
-  video {
+  video, img {
     display: flex;
     justify-content: center;
     align-items: center;

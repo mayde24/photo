@@ -29,7 +29,7 @@ export class ProjectTwoComponent implements OnInit, OnDestroy {
     );
     this.data.emit();
     window.scrollTo(0, 0);
-    if (this.data.lastProjectId == 2) {
+    if (this.data.lastProjectId == 2 && this.data.largeur > 500) {
       // @ts-ignore
       document.getElementById('video2').currentTime = this.data.timecode;
     }
@@ -47,9 +47,11 @@ export class ProjectTwoComponent implements OnInit, OnDestroy {
     window.scrollTo(0, 0);
     this.data.clicked2 = false;
     setTimeout(() => {
-      // @ts-ignore
-      this.data.timecode = document.getElementById('video2').currentTime;
-      this.data.emit();
+      if (this.data.largeur > 500) {
+        // @ts-ignore
+        this.data.timecode = document.getElementById('video2').currentTime;
+        this.data.emit();
+      }
       this.data.again0();
       this.data.show = 0;
     }, 1000);

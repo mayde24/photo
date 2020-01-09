@@ -1,9 +1,8 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {DataService} from '../../services/data.service';
-import {NgbCarousel, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 import {Subscription} from 'rxjs';
-import set = Reflect.set;
 
 @Component({
   selector: 'app-project-one',
@@ -31,7 +30,7 @@ export class ProjectOneComponent implements OnInit, OnDestroy{
     this.data.emit();
 
     window.scrollTo(0, 0);
-    if (this.data.lastProjectId == 1) {
+    if (this.data.lastProjectId == 1 && this.data.largeur > 500) {
       // @ts-ignore
       document.getElementById('video1').currentTime = this.data.timecode;
     }
@@ -49,9 +48,11 @@ export class ProjectOneComponent implements OnInit, OnDestroy{
     this.data.clicked1 = false;
     window.scrollTo(0, 0);
     setTimeout(() => {
-      // @ts-ignore
-      this.data.timecode = document.getElementById('video1').currentTime;
-      this.data.emit();
+      if (this.data.largeur > 500) {
+        // @ts-ignore
+        this.data.timecode = document.getElementById('video1').currentTime;
+        this.data.emit();
+      }
       this.data.again0();
       this.data.show = 0;
     }, 1000);

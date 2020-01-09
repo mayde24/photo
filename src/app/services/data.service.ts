@@ -22,14 +22,16 @@ export class DataService {
 
   again0() {
     this.activeId = `project${this.lastProjectId}`;
-    setTimeout(() => {
-      // @ts-ignore
-      document.getElementById(`stream${this.lastProjectId}`).currentTime = this.timecode;
-    }, 1);
+    if (this.largeur > 500) {
+      setTimeout(() => {
+        // @ts-ignore
+        document.getElementById(`stream${this.lastProjectId}`).currentTime = this.timecode;
+      }, 1);
+    }
   }
   again1() {
     window.scrollTo(0, 0);
-    if (this.lastProjectId == 1) {
+    if (this.lastProjectId == 1 && this.largeur > 500) {
       // @ts-ignore
       document.getElementById('video1').currentTime = this.timecode;
     }
@@ -42,7 +44,7 @@ export class DataService {
   }
   again2() {
     window.scrollTo(0, 0);
-    if (this.lastProjectId == 3) {
+    if (this.lastProjectId == 3 && this.largeur > 500) {
       // @ts-ignore
       document.getElementById('video2').currentTime = this.timecode;
     }
@@ -55,7 +57,7 @@ export class DataService {
   }
   again3() {
     window.scrollTo(0, 0);
-    if (this.lastProjectId == 3) {
+    if (this.lastProjectId == 3 && this.largeur > 500) {
       // @ts-ignore
       document.getElementById('video3').currentTime = this.timecode;
     }

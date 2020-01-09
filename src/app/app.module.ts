@@ -9,6 +9,7 @@ import { ProjectTwoComponent } from './components/project-two/project-two.compon
 import { ProjectThreeComponent } from './components/project-three/project-three.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MyHammerConfig } from './my-hammer.config';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MyHammerConfig } from './my-hammer.config';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    LazyLoadImageModule
   ],
   providers: [
     {

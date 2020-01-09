@@ -30,7 +30,7 @@ export class ProjectThreeComponent implements OnInit, OnDestroy {
     this.data.emit();
 
     window.scrollTo(0, 0);
-    if (this.data.lastProjectId == 3) {
+    if (this.data.lastProjectId == 3 && this.data.largeur > 500) {
       // @ts-ignore
       document.getElementById('video3').currentTime = this.data.timecode;
     }
@@ -48,9 +48,11 @@ export class ProjectThreeComponent implements OnInit, OnDestroy {
     window.scrollTo(0, 0);
     this.data.clicked3 = false;
     setTimeout(() => {
-      // @ts-ignore
-      this.data.timecode = document.getElementById('video3').currentTime;
-      this.data.emit();
+      if (this.data.largeur > 500) {
+        // @ts-ignore
+        this.data.timecode = document.getElementById('video3').currentTime;
+        this.data.emit();
+      }
       this.data.again0();
       this.data.show = 0;
 
