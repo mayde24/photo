@@ -37,20 +37,20 @@
   </div>
 
 
-  <div class="content-container">
+  <div class="content-container" lazy-load-images>
     <div class="text-start">We're just a grain of sand<br>In the history of mankind</div>
     <div class="content-line">
       <div class="content-image">
         <div class="image1">
           <div class="image-container">
             <!--          <img src="../../assets/project11.jpg" class="image-para" data-bottom-top="transform:translate3d(0, 100px, 0)" data-top-bottom="transform:translate3d(0, -100px, 0)">-->
-            <img src="../../../assets/project21.jpg" class="image-para1">
+            <img [attr.data-src]="'../../../assets/project21.jpg'" class="image-para1">
           </div>
         </div>
         <div class="image2">
           <div class="image-container">
             <!--          <img src="../../assets/project12.jpg" class="image-para" data-bottom-top="transform:translate3d(0, 100px, 0)" data-top-bottom="transform:translate3d(0, -100px, 0)">-->
-            <img src="../../../assets/project22.jpg" class="image-para2">
+            <img [attr.data-src]="'../../../assets/project22.jpg'" class="image-para2">
           </div>
         </div>
       </div>
@@ -68,34 +68,34 @@
       <div class="desktop" *ngIf="data.largeur > 650">
         <div class="content-image" [ngClass]="{'hidden': index != 3}">
           <div class="image">
-            <div class="image-container2 image11 back3"></div>
+            <div class="image-container2 image11 effet-image" [attr.data-background-src]="'../../../assets/project23.jpg'"></div>
           </div>
           <div class="image2">
-            <div class="image-container2 image22 back4"></div>
+            <div class="image-container2 image22 effet-image" [attr.data-background-src]="'../../../assets/project24.jpg'"></div>
           </div>
         </div>
         <div class="content-image" [ngClass]="{'hidden': index != 5}">
           <div class="image">
-            <div class="image-container2 image11 back5"></div>
+            <div class="image-container2 image11 effet-image" [attr.data-background-src]="'../../../assets/project25.jpg'"></div>
           </div>
           <div class="image2">
-            <div class="image-container2 image22 back6"></div>
+            <div class="image-container2 image22 effet-image" [attr.data-background-src]="'../../../assets/project26.jpg'"></div>
           </div>
         </div>
         <div class="content-image" [ngClass]="{'hidden': index != 7}">
           <div class="image">
-            <div class="image-container2 image11 back7"></div>
+            <div class="image-container2 image11 effet-image" [attr.data-background-src]="'../../../assets/project27.jpg'"></div>
           </div>
           <div class="image2">
-            <div class="image-container2 image22 back8"></div>
+            <div class="image-container2 image22 effet-image" [attr.data-background-src]="'../../../assets/project28.jpg'"></div>
           </div>
         </div>
         <div class="content-image" [ngClass]="{'hidden': index != 9}">
           <div class="image">
-            <div class="image-container2 image11 back9"></div>
+            <div class="image-container2 image11 effet-image" [attr.data-background-src]="'../../../assets/project29.jpg'"></div>
           </div>
           <div class="image2">
-            <div class="image-container2 image22 back10"></div>
+            <div class="image-container2 image22 effet-image" [attr.data-background-src]="'../../../assets/project210.jpg'"></div>
           </div>
         </div>
         <div class="arrow-right-container" (click)="right()" [ngClass]="{'notVisible': index == 9}"><img src="../../../assets/arrow-right.png" alt="" class="arrow-right"></div>
@@ -110,56 +110,56 @@
           <ng-template ngbSlide>
             <div class="section">
               <div class="image">
-                <div class="image-container2 image11 back33"></div>
+                <div class="image-container2 image11" [attr.data-background-src]="'../../../assets/project23.jpg'"></div>
               </div>
             </div>
           </ng-template>
           <ng-template ngbSlide>
             <div class="section">
               <div class="image">
-                <div class="image-container2 image11 back44"></div>
+                <div class="image-container2 image11" [attr.data-background-src]="'../../../assets/project24.jpg'"></div>
               </div>
             </div>
           </ng-template>
           <ng-template ngbSlide>
             <div class="section">
               <div class="image">
-                <div class="image-container2 image11 back55"></div>
+                <div class="image-container2 image11" [attr.data-background-src]="'../../../assets/project25.jpg'"></div>
               </div>
             </div>
           </ng-template>
           <ng-template ngbSlide>
             <div class="section">
               <div class="image">
-                <div class="image-container2 image11 back66"></div>
+                <div class="image-container2 image11" [attr.data-background-src]="'../../../assets/project26.jpg'"></div>
               </div>
             </div>
           </ng-template>
           <ng-template ngbSlide>
             <div class="section">
               <div class="image">
-                <div class="image-container2 image11 back77"></div>
+                <div class="image-container2 image11" [attr.data-background-src]="'../../../assets/project27.jpg'"></div>
               </div>
             </div>
           </ng-template>
           <ng-template ngbSlide>
             <div class="section">
               <div class="image">
-                <div class="image-container2 image11 back88"></div>
+                <div class="image-container2 image11" [attr.data-background-src]="'../../../assets/project28.jpg'"></div>
               </div>
             </div>
           </ng-template>
           <ng-template ngbSlide>
             <div class="section">
               <div class="image">
-                <div class="image-container2 image11 back99"></div>
+                <div class="image-container2 image11" [attr.data-background-src]="'../../../assets/project29.jpg'"></div>
               </div>
             </div>
           </ng-template>
           <ng-template ngbSlide>
             <div class="section">
               <div class="image">
-                <div class="image-container2 image11 back100"></div>
+                <div class="image-container2 image11" [attr.data-background-src]="'../../../assets/project210.jpg'"></div>
               </div>
             </div>
           </ng-template>
